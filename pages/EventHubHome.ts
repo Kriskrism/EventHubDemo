@@ -19,13 +19,12 @@ export class EvenHubHome{
         this.page = page;
         this. logOutBtn = page.getByTestId('logout-btn');
         this.loggedInUser = page.getByTestId('user-email-display');
-        this.homeLink = page.getByRole('link', {name:'Home'})
-        this.eventsLink = page.getByRole('link', {name:'Events'})
-        this.myBookingsLink = page.getByRole('link', {name:'My Bookings'})
-        this.apiDocsLink = page.getByRole('link', {name:'API Docs'})
-        this.adminLink = page.getByRole('link', {name:'Admin'})
-        this.browseEventsLink = page.getByRole('link', {name:'Browse Events'})
-        this.myBookingsLink = page.getByRole('link', {name:'My Bookings'})
+        this.homeLink = page.getByRole('link', {name:'Home'}).first()
+        this.eventsLink = page.getByRole('link', {name:'Events'}).first()
+        this.myBookingsLink = page.getByTestId('nav-bookings')
+        this.apiDocsLink = page.getByRole('link', {name:'API Docs'}).first()
+        this.adminLink = page.getByRole('link', {name:'Admin'}).first()
+        this.browseEventsLink = page.getByRole('link', {name:'Browse Events'}).first()
     }
 
     async verifyLogInSuccess(){
