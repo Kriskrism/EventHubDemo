@@ -68,7 +68,7 @@ export class Mybookings{
         }
     }
 
-    async verifyConfirmedEvent(eventName : String, ticketCount: number , venue: string){
+    async verifyConfirmedEvent(eventName : String, ticketCount: string , venue: string){
             
             let todaysDate = await new commonMethods().getTodaysDate();
 
@@ -77,6 +77,7 @@ export class Mybookings{
             await expect(this.page.locator(`.venue:has-text("${venue}")`)).toHaveText(venue);
             let date = await this.bookedDate.textContent();
             await expect(date).toContain(todaysDate)
+            return date;
            
     }
 
@@ -128,19 +129,5 @@ export class Mybookings{
         }
     }
 
-    async getEventName(): Promise<string | null> {
-        return await this.eventName.textContent();
-    }
-
-    async getTicketCount(): Promise<string | null> {
-        return await this.ticketCount.textContent();
-    }
-
-    async getVenue(): Promise<string | null> {
-        return await this.venue.textContent();
-    }
-
-    async getTotalAmount(): Promise<string | null> {
-        return await this.totalAmount.textContent();
-    }
+    
 }
