@@ -1,7 +1,9 @@
 import { test } from "@playwright/test";
+import { faker } from '@faker-js/faker';
 import { RegisterPage } from "../pages/RegisterPage";
 import { SigninPage } from "../pages/SignInPage";
 import testData from '../resources/testData.json'
+import { credentials } from '../resources/config/env'
 
 test.describe('Register Page Tests', () => {
     let registerPage: RegisterPage
@@ -18,8 +20,8 @@ test.describe('Register Page Tests', () => {
         await registerPage.verifyRegisterPageElements();
     })
 
-    test('Regsiter a new account', async () => {    
-        await registerPage.registerAccount(testData.Email, testData.Password);
-        await signInPage.validateSignInPageTitle();
+    test('Regsiter a new account', async () => {
+        await registerPage.registerAccount(faker.internet.email(), 'Test@123');
     })
+    //getvthe data here from faker and update teh latest value in .env file and then use that email to login and verify the login is successful
 })

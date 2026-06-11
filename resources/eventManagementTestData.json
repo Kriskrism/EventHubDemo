@@ -1,0 +1,54 @@
+{
+  "url": "https://eventhub.rahulshettyacademy.com/login",
+  "adminEventTestData": {
+    "techSummit": {
+      "title": "Tech Innovation Summit 2026",
+      "description": "Discover cutting-edge technologies and network with industry leaders in a day-long summit featuring keynote speeches, panel discussions, and interactive workshops.",
+      "category": "Conference",
+      "city": "Bangalore",
+      "venue": "Bengaluru Convention Center, Outer Ring Road",
+      "dateTime": "2027-06-10T11:31",
+      "price": "1500",
+      "totalSeats": "500",
+      "imageUrl": "https://example.com/tech-summit-image.jpg",
+      "expectedDate": "15 Nov 2026",
+      "expectedPrice": "$1,500"
+    },
+    "summerFestival": {
+      "title": "Summer Festival 2026",
+      "category": "Festival",
+      "city": "Mumbai",
+      "venue": "Marine Drive",
+      "dateTime": "2027-06-10T11:31",
+      "price": "800",
+      "totalSeats": "1000"
+    },
+    "jazzNight": {
+      "title": "Jazz Night",
+      "category": "Concert",
+      "city": "Goa",
+      "venue": "Beach Resort",
+      "dateTime": "2027-06-10T11:31",
+      "price": "1800",
+      "totalSeats": "800"
+    },
+    "yogaRetreat": {
+      "title": "Yoga Retreat",
+      "category": "Workshop",
+      "city": "Rishikesh",
+      "venue": "Yoga Ashram",
+      "dateTime": "2027-06-10T11:31",
+      "price": "2500",
+      "totalSeats": "100"
+    },
+    "sportsChampionship": {
+      "title": "Sports Championship",
+      "category": "Sports",
+      "city": "Kolkata",
+      "venue": "Eden Gardens",
+      "dateTime": "2027-06-10T11:31",
+      "price": "500",
+      "totalSeats": "50000"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import { Locator, LocatorScreenshotOptions, Page } from "@playwright/test";
 import { expect } from "@playwright/test";
 import testData from '../resources/testData.json'
+import { credentials } from '../resources/config/env'
 
 export class EvenHubHome{
     page :Page;
@@ -29,7 +30,8 @@ export class EvenHubHome{
 
     async verifyLogInSuccess(){
         await this.logOutBtn.isVisible();
-        await expect(this.loggedInUser).toHaveText(testData.Email);
+        console.log("Logged inuser" + await this.loggedInUser.textContent())
+        await expect(this.loggedInUser).toHaveText(credentials.username);
     }
 
     async navigateBrowseEvents(){

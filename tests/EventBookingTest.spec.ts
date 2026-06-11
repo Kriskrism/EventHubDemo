@@ -4,9 +4,10 @@ import { EvenHubHome } from '../pages/EventHubHome';
 import { EventsPage } from '../pages/EventsPage';
 import { EventDetailsPage } from '../pages/EventDetailsPage';
 import testData from '../resources/testData.json';
+import { credentials } from '../resources/config/env'
 
 test.describe('Event Booking Tests', () => {
-    
+
     let signInPage: SigninPage;
     let evenHubHome: EvenHubHome;
     let eventsPage: EventsPage;
@@ -18,19 +19,19 @@ test.describe('Event Booking Tests', () => {
         evenHubHome = new EvenHubHome(page);
         eventsPage = new EventsPage(page);
         eventDetailsPage = new EventDetailsPage(page);
-        
+
         // Navigate to login page
         await page.goto(testData.url);
     });
 
     test("Verify successful event booking with seat reduction", async ({ page }) => {
         // Step 1: Login to event hub
-        await signInPage.clickSignIn(testData.Email, testData.Password);
+        await signInPage.clickSignIn(credentials.username, credentials.password);
         await evenHubHome.verifyLogInSuccess();
 
         // Step 2: Navigate to events page
         await eventsPage.navigateToEventsPage();
-       // await eventsPage.waitForEventsToLoad();
+        // await eventsPage.waitForEventsToLoad();
         //
         await eventsPage.verifyEventListIsDisplayed();
 
@@ -47,11 +48,12 @@ test.describe('Event Booking Tests', () => {
 
         // Verify seats on detail page match the listing page
         const detailPageSeats = await eventDetailsPage.getAvailableSeatsOnDetailPage();
+
         expect(detailPageSeats).toBe(availableSeatsBeforeBooking);
 
         // Step 5: Click Book Now
         await eventDetailsPage.clickBookNow();
-        
+
         // Verify booking success
         await eventDetailsPage.verifyBookingSuccess();
 

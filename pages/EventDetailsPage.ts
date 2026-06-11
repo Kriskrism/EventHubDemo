@@ -11,7 +11,7 @@ export class EventDetailsPage {
     constructor(page: Page) {
         this.page = page;
         this.eventTitle = page.locator('h1, h2').first();
-        this.availableSeatsDetail = page.locator('text=/seats|available/i').first();
+        this.availableSeatsDetail = page.locator("//p[contains(text(),'Available')]//parent::div//span")
         this.bookNowButton = page.getByRole('button', { name: /Book Now|book/i }).first();
         this.bookingSuccessMessage = page.getByText(/Booking successful|confirmed|booked/i);
         this.backButton = page.getByRole('button', { name: /Back|back/i }).or(page.getByRole('link', { name: 'Events' })).first();
@@ -23,13 +23,15 @@ export class EventDetailsPage {
 
     async getAvailableSeatsOnDetailPage(): Promise<number> {
         const seatsText = await this.availableSeatsDetail.first().textContent();
+        const availableSeats = seatsText?.split('/')[0].trim();
         
-        if (!seatsText) {
+        if (!availableSeats) {
             throw new Error('Could not find available seats on detail page');
         }
 
         // Extract number from text like "Available Seats: 5" or "5 Seats Available"
-        const seatsMatch = seatsText.match(/\d+/);
+        const seatsMatch = availableSeats.match(/\d+/);
+        
         return seatsMatch ? parseInt(seatsMatch[0], 10) : 0;
     }
 

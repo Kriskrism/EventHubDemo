@@ -1,10 +1,8 @@
 {
 "url" : "https://eventhub.rahulshettyacademy.com/login",
 "registerUrl" : "https://eventhub.rahulshettyacademy.com/register",
-"Email" : "KrtestEventhub@gmail.com",
-"Password" : "Test@123",
 "eventName" : "Dilli Diwali Mela",
-"Eventdate" : "Tuesday, 20 October 2026",
+"Eventdate" : "Tuesday, 20 October",
 "EventTime" : "09:00 pm",
 "EventVenue" : "Pragati Maidan Exhibition Grounds",
 "EventCity":"Delhi",

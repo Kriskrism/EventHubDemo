@@ -6,6 +6,7 @@ import { EventDetailsPage } from '../pages/EventDetailsPage';
 import testData from '../resources/testData.json';
 import { BookEventPage } from '../pages/BookEventPage';
 let bookingRefNumber;
+import { credentials } from '../resources/config/env'
 
 test.describe('Event Booking Tests', () => {
 
@@ -30,7 +31,8 @@ test.describe('Event Booking Tests', () => {
     test("Book event successfully", async () => {
         
         await test.step("Login to event hub", async () => {
-            await signInPage.clickSignIn(testData.Email, testData.Password);
+            
+            await signInPage.clickSignIn(credentials.username, credentials.password);
             await evenHubHome.verifyLogInSuccess();
         });
 
@@ -42,7 +44,7 @@ test.describe('Event Booking Tests', () => {
 
         await test.step("Navigate to Booking screen and book tickets", async () => {
             await bookeventPage.verifyEventDetails(testData.eventName, testData.EventTime, testData.Eventdate, testData.EventVenue, testData.EventCity, parseInt(testData.NumberOfTickets), parseInt(testData.PricePerTicket));
-            await bookeventPage.bookTickets(testData.FullName, testData.Email, testData.PhoneNumber, parseInt(testData.NumberOfTickets));
+            await bookeventPage.bookTickets(testData.FullName, credentials.username, testData.PhoneNumber, parseInt(testData.NumberOfTickets));
         });
 
         await test.step("Verify the booking is successful", async()=>{
