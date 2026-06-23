@@ -1,12 +1,12 @@
 import { Page, test, expect } from '@playwright/test';
-import { SigninPage } from '../pages/SignInPage';
-import { EvenHubHome } from '../pages/EventHubHome';
-import { EventsPage } from '../pages/EventsPage';
-import { EventDetailsPage } from '../pages/EventDetailsPage';
-import testData from '../resources/testData.json';
-import { BookEventPage } from '../pages/BookEventPage';
+import { SigninPage } from '../../pages/SignInPage';
+import { EvenHubHome } from '../../pages/EventHubHome';
+import { EventsPage } from '../../pages/EventsPage';
+import { EventDetailsPage } from '../../pages/EventDetailsPage';
+import testData from '../../resources/testData.json';
+import { BookEventPage } from '../../pages/BookEventPage';
 let bookingRefNumber;
-import { credentials } from '../resources/config/env'
+import { credentials } from '../../resources/config/env'
 
 test.describe('Event Booking Tests', () => {
 

@@ -1,9 +1,9 @@
 import { test } from "@playwright/test";
 import { faker } from '@faker-js/faker';
-import { RegisterPage } from "../pages/RegisterPage";
-import { SigninPage } from "../pages/SignInPage";
-import testData from '../resources/testData.json'
-import { credentials } from '../resources/config/env'
+import { RegisterPage } from "../../pages/RegisterPage";
+import { SigninPage } from "../../pages/SignInPage";
+import testData from '../../resources/testData.json'
+import { credentials } from '../../resources/config/env'
 
 test.describe('Register Page Tests', () => {
     let registerPage: RegisterPage

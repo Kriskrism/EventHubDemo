@@ -1,8 +1,8 @@
 import { Page, test, expect } from '@playwright/test';
-import { EvenHubHome } from '../pages/EventHubHome';
-import { SigninPage } from '../pages/SignInPage';
-import { credentials } from '../resources/config/env'
-import testData from '../resources/testData.json'
+import { EvenHubHome } from '../../pages/EventHubHome';
+import { SigninPage } from '../../pages/SignInPage';
+import { credentials } from '../../resources/config/env'
+import testData from '../../resources/testData.json'
 
 test.describe('Register Page Tests', () => {
 

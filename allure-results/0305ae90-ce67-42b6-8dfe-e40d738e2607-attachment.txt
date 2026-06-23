@@ -1,0 +1,3 @@
+baseURL: https://api.eventhub.rahulshettyacademy.com/api
+https://api.eventhub.rahulshettyacademy.com/auth/login
+{"success":false,"error":"Route POST /auth/login not found"}

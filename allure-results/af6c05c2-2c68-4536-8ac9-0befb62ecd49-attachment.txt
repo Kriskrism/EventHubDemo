@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "data": {
+    "id": 64193,
+    "title": "Tech Summit 2026",
+    "description": "A premier technology conference.",
+    "category": "Conference",
+    "venue": "Bangalore International Centre",
+    "city": "Bangalore",
+    "eventDate": "2027-06-15T09:00:00.000Z",
+    "price": "1500",
+    "totalSeats": 500,
+    "availableSeats": 500,
+    "imageUrl": "https://example.com/banner.jpg",
+    "isStatic": false,
+    "userId": 1795,
+    "createdAt": "2026-06-23T07:45:46.973Z",
+    "updatedAt": "2026-06-23T07:47:55.249Z"
+  },
+  "message": "Event created successfully"
+}

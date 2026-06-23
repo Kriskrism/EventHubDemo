@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { SigninPage } from '../pages/SignInPage';
-import { EvenHubHome } from '../pages/EventHubHome';
-import { Mybookings } from '../pages/MyBookings';
-import testData from '../resources/testData.json';
-import { ViewBookingsScreen } from '../pages/ViewBookingsScreen';
-import { credentials } from '../resources/config/env'
+import { SigninPage } from '../../pages/SignInPage';
+import { EvenHubHome } from '../../pages/EventHubHome';
+import { Mybookings } from '../../pages/MyBookings';
+import testData from '../../resources/testData.json';
+import { ViewBookingsScreen } from '../../pages/ViewBookingsScreen';
+import { credentials } from '../../resources/config/env'
 
 test.describe('My Bookings Page Tests', () => {
     let signInPage: SigninPage;
