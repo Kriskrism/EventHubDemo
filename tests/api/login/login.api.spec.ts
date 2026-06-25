@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { loginService } from '../../../services/login';
+import { LoginService } from '../../../services/login/login';
 import { credentials } from '../../../resources/config/env';
 
 let invalidPassword, invalidEmail,token;
@@ -12,7 +12,7 @@ test('Login API test using valid credentials', async () => {
         "email": userName,
         "password": password
     };
-    const response = await loginService.login(payLoad);
+    const response = await LoginService.login(payLoad);
 
     const body = await response.json();
     expect(await response.status()).toBe(200);
@@ -30,7 +30,7 @@ test('Login using invalid credentials', async () => {
         "password": invalidPassword
     };
 
-    const response = await loginService.login(payLoad);
+    const response = await LoginService.login(payLoad);
 
     const body = await response.json();
     expect(await response.status()).toBe(400);
@@ -47,7 +47,7 @@ test('Login using invalid email', async () => {
         "password": password
     }
 
-    const response = await loginService.login(payLoad);
+    const response = await LoginService.login(payLoad);
     const body = await response.json();
     expect(await response.status()).toBe(400)
     expect(await body.error).toBe('Invalid email or password');

@@ -1,0 +1,69 @@
+Actual : {
+  success: true,
+  data: {
+    id: 68803,
+    eventId: 65150,
+    userId: 1795,
+    customerName: 'Neil Legros',
+    customerEmail: 'herbert.mohr66@hotmail.com',
+    customerPhone: '+91-3845298421',
+    quantity: 6,
+    totalPrice: '44895.24',
+    status: 'confirmed',
+    bookingRef: 'R-2MWRQG',
+    createdAt: '2026-06-25T06:21:03.667Z',
+    updatedAt: '2026-06-25T06:21:03.667Z',
+    event: {
+      id: 65150,
+      title: 'Robust bifurcated matrices',
+      description: 'Vae virtus perferendis admiratio voluntarius doloremque vespillo comprehendo.',
+      category: 'Conference',
+      venue: 'Bangalore International Centre',
+      city: 'East Ubaldo',
+      eventDate: '2026-11-18T13:15:27.729Z',
+      price: '7482.54',
+      totalSeats: 471,
+      availableSeats: 471,
+      imageUrl: 'https://example.com/banner.jpg',
+      isStatic: false,
+      userId: 1795,
+      createdAt: '2026-06-25T06:21:03.507Z',
+      updatedAt: '2026-06-25T06:21:03.507Z'
+    }
+  }
+}
+Expected:  {
+  success: true,
+  data: {
+    id: 68803,
+    eventId: 65150,
+    userId: 1795,
+    customerName: 'Neil Legros',
+    customerEmail: 'herbert.mohr66@hotmail.com',
+    customerPhone: '+91-3845298421',
+    quantity: 6,
+    totalPrice: '44895.24',
+    status: 'confirmed',
+    bookingRef: 'R-2MWRQG',
+    createdAt: '2026-06-25T06:21:03.667Z',
+    updatedAt: '2026-06-25T06:21:03.667Z',
+    event: {
+      id: 65150,
+      title: 'Robust bifurcated matrices',
+      description: 'Vae virtus perferendis admiratio voluntarius doloremque vespillo comprehendo.',
+      category: 'Conference',
+      venue: 'Bangalore International Centre',
+      city: 'East Ubaldo',
+      eventDate: '2026-11-18T13:15:27.729Z',
+      price: '7482.54',
+      totalSeats: 471,
+      availableSeats: 471,
+      imageUrl: 'https://example.com/banner.jpg',
+      isStatic: false,
+      userId: 1795,
+      createdAt: '2026-06-25T06:21:03.507Z',
+      updatedAt: '2026-06-25T06:21:03.507Z'
+    }
+  },
+  message: 'Booking confirmed!'
+}

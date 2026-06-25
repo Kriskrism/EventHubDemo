@@ -1,0 +1,22 @@
+Body:  {
+  success: true,
+  data: {
+    id: 64607,
+    title: 'Tech Summit 2026',
+    description: 'A premier technology conference.',
+    category: 'Conference',
+    venue: 'Bangalore International Centre',
+    city: 'Bangalore',
+    eventDate: '2027-06-15T09:00:00.000Z',
+    price: '1500',
+    totalSeats: 500,
+    availableSeats: 500,
+    imageUrl: 'https://example.com/banner.jpg',
+    isStatic: false,
+    userId: 1795,
+    createdAt: '2026-06-24T07:38:41.626Z',
+    updatedAt: '2026-06-24T07:51:37.142Z'
+  },
+  message: 'Event created successfully'
+}
+deleteBody: { success: false, error: 'Route DELETE /api/event/64607 not found' }

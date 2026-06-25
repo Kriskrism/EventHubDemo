@@ -24,4 +24,15 @@ export class APIClient {
             }
         });
     }
+
+    //invalid token for negative testing
+    static async getInvalidAuthClient(inValidToken : string){
+        return await request.newContext({
+            baseURL : process.env.API_BASE_URL,
+            extraHTTPHeaders:{
+                Authorization: `Bearer ${inValidToken}`}
+        
+
+        })
+    }
 }

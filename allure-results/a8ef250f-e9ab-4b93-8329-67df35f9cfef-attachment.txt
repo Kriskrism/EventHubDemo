@@ -1,0 +1,10 @@
+response {
+  success: false,
+  error: 'Validation failed',
+  details: [
+    {
+      field: 'customerPhone',
+      message: 'Customer phone must contain only digits and +, -, spaces, or parentheses'
+    }
+  ]
+}

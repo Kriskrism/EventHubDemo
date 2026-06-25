@@ -1,0 +1,21 @@
+Body:  {
+  success: true,
+  data: {
+    id: 64551,
+    title: 'Updated Extended content-based matrix',
+    description: 'Provident suus tamen ars usitas iure sonitus.',
+    category: 'Conference',
+    venue: 'Bangalore International Centre',
+    city: 'Sioux City',
+    eventDate: '2026-08-17T06:43:00.062Z',
+    price: '8735.3',
+    totalSeats: 78,
+    availableSeats: 500,
+    imageUrl: 'https://example.com/banner.jpg',
+    isStatic: false,
+    userId: 1795,
+    createdAt: '2026-06-24T06:28:20.417Z',
+    updatedAt: '2026-06-24T06:28:20.503Z'
+  },
+  message: 'Event updated successfully'
+}

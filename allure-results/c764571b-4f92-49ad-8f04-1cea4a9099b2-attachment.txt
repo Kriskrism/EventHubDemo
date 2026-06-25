@@ -1,0 +1,11 @@
+Body:  {
+  success: false,
+  error: 'Validation failed',
+  details: [
+    { field: 'eventDate', message: 'Event date is required' },
+    {
+      field: 'eventDate',
+      message: 'Event date must be a valid ISO 8601 date'
+    }
+  ]
+}

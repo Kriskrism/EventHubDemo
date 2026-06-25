@@ -1,0 +1,69 @@
+Actual : {
+  success: true,
+  data: {
+    id: 68807,
+    eventId: 65152,
+    userId: 1795,
+    customerName: 'Elizabeth Little',
+    customerEmail: 'hilton_kreiger@gmail.com',
+    customerPhone: '+91-7088995928',
+    quantity: 8,
+    totalPrice: '49535.36',
+    status: 'confirmed',
+    bookingRef: 'I-UDX9GB',
+    createdAt: '2026-06-25T06:22:04.758Z',
+    updatedAt: '2026-06-25T06:22:04.758Z',
+    event: {
+      id: 65152,
+      title: 'Innovative mobile migration',
+      description: 'Carpo ocer audacia.',
+      category: 'Conference',
+      venue: 'Bangalore International Centre',
+      city: 'New Martaworth',
+      eventDate: '2026-12-09T20:29:11.228Z',
+      price: '6191.92',
+      totalSeats: 921,
+      availableSeats: 921,
+      imageUrl: 'https://example.com/banner.jpg',
+      isStatic: false,
+      userId: 1795,
+      createdAt: '2026-06-25T06:22:04.692Z',
+      updatedAt: '2026-06-25T06:22:04.692Z'
+    }
+  }
+}
+Expected:  {
+  success: true,
+  data: {
+    id: 68807,
+    eventId: 65152,
+    userId: 1795,
+    customerName: 'Elizabeth Little',
+    customerEmail: 'hilton_kreiger@gmail.com',
+    customerPhone: '+91-7088995928',
+    quantity: 8,
+    totalPrice: '49535.36',
+    status: 'confirmed',
+    bookingRef: 'I-UDX9GB',
+    createdAt: '2026-06-25T06:22:04.758Z',
+    updatedAt: '2026-06-25T06:22:04.758Z',
+    event: {
+      id: 65152,
+      title: 'Innovative mobile migration',
+      description: 'Carpo ocer audacia.',
+      category: 'Conference',
+      venue: 'Bangalore International Centre',
+      city: 'New Martaworth',
+      eventDate: '2026-12-09T20:29:11.228Z',
+      price: '6191.92',
+      totalSeats: 921,
+      availableSeats: 921,
+      imageUrl: 'https://example.com/banner.jpg',
+      isStatic: false,
+      userId: 1795,
+      createdAt: '2026-06-25T06:22:04.692Z',
+      updatedAt: '2026-06-25T06:22:04.692Z'
+    }
+  },
+  message: 'Booking confirmed!'
+}

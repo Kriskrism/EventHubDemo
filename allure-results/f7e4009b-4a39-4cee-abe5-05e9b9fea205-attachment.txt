@@ -1,0 +1,2 @@
+Before booking 755
+After delete 759

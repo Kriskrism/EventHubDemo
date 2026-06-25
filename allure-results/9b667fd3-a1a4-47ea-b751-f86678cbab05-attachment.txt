@@ -1,0 +1,21 @@
+Body:  {
+  success: true,
+  data: {
+    id: 64544,
+    title: 'Updated Innovative full-range installation',
+    description: 'Suasoria vulgivagus deleo fuga deripio.',
+    category: 'Conference',
+    venue: 'Bangalore International Centre',
+    city: 'Port Seamusboro',
+    eventDate: '2027-01-23T22:07:36.301Z',
+    price: '6546.99',
+    totalSeats: 763,
+    availableSeats: 500,
+    imageUrl: 'https://example.com/banner.jpg',
+    isStatic: false,
+    userId: 1795,
+    createdAt: '2026-06-24T06:12:35.899Z',
+    updatedAt: '2026-06-24T06:25:12.447Z'
+  },
+  message: 'Event updated successfully'
+}

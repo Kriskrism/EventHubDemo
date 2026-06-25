@@ -1,0 +1,11 @@
+response APIResponse: 400 Bad Request
+  Date: Wed, 24 Jun 2026 12:30:03 GMT
+  Server: Apache/2.4.52 (Ubuntu)
+  X-Powered-By: Express
+  Access-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com
+  Vary: Origin
+  Access-Control-Allow-Credentials: true
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 168
+  ETag: W/"a8-gl0U2tsTouigLbeEm8KCZ2P4s2o"
+  Connection: close

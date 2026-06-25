@@ -1,0 +1,3 @@
+Available seat after booking  270
+from list event 265
+After delete 270
