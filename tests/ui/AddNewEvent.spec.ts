@@ -3,7 +3,8 @@ import { SigninPage } from '../../pages/SignInPage';
 import { EvenHubHome } from '../../pages/EventHubHome';
 import { AdminEventManagementPage } from '../../pages/CreateNewEvent';
 import { credentials } from '../../resources/config/env';
-import eventManagementTestData from '../../resources/eventManagementTestData.json';
+import eventManagementTestData from '../../resources/utilities/uiTestData/eventManagementTestData.json';
+
 
 test.describe('Admin Event Management Tests', () => {
     let signInPage: SigninPage;

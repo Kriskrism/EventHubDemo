@@ -3,7 +3,7 @@ import { SigninPage } from '../../pages/SignInPage';
 import { EvenHubHome } from '../../pages/EventHubHome';
 import { EventsPage } from '../../pages/EventsPage';
 import { EventDetailsPage } from '../../pages/EventDetailsPage';
-import testData from '../../resources/testData.json';
+import testData from '../../resources/utilities/uiTestData/testData.json';
 import { credentials } from '../../resources/config/env'
 
 test.describe('Event Booking Tests', () => {

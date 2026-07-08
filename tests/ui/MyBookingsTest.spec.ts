@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { SigninPage } from '../../pages/SignInPage';
 import { EvenHubHome } from '../../pages/EventHubHome';
 import { Mybookings } from '../../pages/MyBookings';
-import testData from '../../resources/testData.json';
+import testData from '../../resources/utilities/uiTestData/testData.json';
 import { ViewBookingsScreen } from '../../pages/ViewBookingsScreen';
 import { credentials } from '../../resources/config/env'
 

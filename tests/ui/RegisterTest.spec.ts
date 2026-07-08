@@ -2,7 +2,7 @@ import { test } from "@playwright/test";
 import { faker } from '@faker-js/faker';
 import { RegisterPage } from "../../pages/RegisterPage";
 import { SigninPage } from "../../pages/SignInPage";
-import testData from '../../resources/testData.json'
+import testData from '../../resources/utilities/uiTestData/testData.json'
 import { credentials } from '../../resources/config/env'
 
 test.describe('Register Page Tests', () => {
