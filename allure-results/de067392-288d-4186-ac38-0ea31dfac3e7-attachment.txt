@@ -1,0 +1,5 @@
+Logged inuserKrtestEventhub@gmail.com
+Clicked View Details button
+Event name not found in details view
+Customer details not found in details view
+Payment summary not found in details view

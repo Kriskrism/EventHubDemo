@@ -37,7 +37,7 @@ export class EventsPage {
             const eventLocator = this.page.locator(`article, [role="article"]`).filter({ hasText: eventName }).first();
             
             // Look for seats information using getByText() which supports regex
-            const seatsElement = eventLocator.getByText(/\d+\s+seats\s+available/i);
+            const seatsElement = eventLocator.getByText(/\d+\s+seats\s+lefts/i);
             const seatsText = await seatsElement.textContent();
             
             if (!seatsText) {
