@@ -1,4 +1,5 @@
 import { test, expect } from "../../../fixtures/authFixture";
+
 import { CreateNewBooking } from "../../../services/bookings/createNewBookings";
 import fs from 'fs'
 import { BookingEventFactory } from "../../../resources/data/BookingFactory";
@@ -10,7 +11,7 @@ import { DeleteEvent } from "../../../services/events/deleteEvent";
 test.describe("Create a new booking ", async () => {
 
     const token = JSON.parse(
-        fs.readFileSync('./auth/token.json', 'utf-8')
+        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
     ).token;
 
     let bookingPayload: any

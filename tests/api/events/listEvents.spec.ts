@@ -5,7 +5,7 @@ import fs from 'fs';
 test('List Events', async () => {
 
     const token = JSON.parse(
-        fs.readFileSync('./auth/token.json', 'utf-8')
+        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
     ).token;
 
     const response = await ListEventsService.listEvents(token);

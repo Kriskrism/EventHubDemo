@@ -13,7 +13,7 @@ test.describe('Get the single event using id', async () => {
     test.beforeAll('Access the event id', async () => {
         //accessing the auth token
         token = JSON.parse(
-            fs.readFileSync('./auth/token.json', 'utf-8')
+            fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
         ).token;
 
         invalidToken = JSON.parse(

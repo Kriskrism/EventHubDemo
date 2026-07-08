@@ -1,22 +1,31 @@
-import { test as base, expect } from '@playwright/test';
+import { test as base, request, APIRequestContext } from '@playwright/test';
 import fs from 'fs';
 
-type AuthFixture = {
-  authHeaders: {
-    Authorization: string;
-  };
+type ApiFixtures = {
+    apiContext: APIRequestContext;
 };
 
-export const test = base.extend<AuthFixture>({
-  authHeaders: async ({}, use) => {
-    const data = JSON.parse(
-      fs.readFileSync('./auth/token.json', 'utf-8')
-    );
+export const test = base.extend<ApiFixtures>({
 
-    await use({
-      Authorization: `Bearer ${data.token}`,
-    });
-  },
+    apiContext: async ({}, use) => {
+
+        const tokenData = JSON.parse(
+            fs.readFileSync('auth/token.json', 'utf-8')
+        );
+
+        const apiContext = await request.newContext({
+            baseURL: process.env.BASE_URL,
+            extraHTTPHeaders: {
+                Authorization: `Bearer ${tokenData.accessToken}`,
+                'Content-Type': 'application/json'
+            }
+        });
+
+        await use(apiContext);
+
+        await apiContext.dispose();
+    }
+
 });
 
-export { expect };
+export { expect } from '@playwright/test';

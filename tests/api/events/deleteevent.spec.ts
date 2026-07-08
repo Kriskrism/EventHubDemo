@@ -7,7 +7,7 @@ import { EventFactory } from "../../../resources/data/EventFactory.ts";
 
 test.describe('Verify the delete operation', async () => {
 
-    const token = JSON.parse(fs.readFileSync('./auth/token.json', 'utf-8')).token
+    const token = JSON.parse(fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')).token
     let eventID: number;
     const createEventData = EventFactory.create();
 

@@ -13,7 +13,7 @@ test.describe("Create new events", async () => {
 
     //accessing the auth token
     const token = JSON.parse(
-        fs.readFileSync('./auth/token.json', 'utf-8')
+        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
     ).token;
 
     const payLoad = EventFactory.create();

@@ -9,7 +9,7 @@ import { DeleteEvent } from "../../../services/events/deleteEvent";
 
 test.describe(async () => {
     const token = JSON.parse(
-        fs.readFileSync('./auth/token.json', 'utf-8')
+        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
     ).token;
 
     let bookingPayload: any

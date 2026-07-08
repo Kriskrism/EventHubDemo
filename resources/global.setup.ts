@@ -1,6 +1,5 @@
-import { request } from '@playwright/test';
 import fs from 'fs';
-import path from 'path';
+import { request } from '@playwright/test';
 
 async function globalSetup() {
 
@@ -8,27 +7,25 @@ async function globalSetup() {
         baseURL: process.env.API_BASE_URL
     });
 
-    const response = await apiContext.post('/api/auth//login', {
+    const response = await apiContext.post('api/auth/login', {
         data: {
-            email: process.env.TEST_USERNAME,
-            password: process.env.TEST_PASSWORD
+            email: process.env.EMAIL,
+            password: process.env.PASSWORD
         }
     });
 
-    const body = await response.json();
+    const responseBody = await response.json();
 
-    const token = body.token; 
-    
-    const tokenPath = path.resolve(
-    process.cwd(),
-    'resources/utilities/apiTestData/token.json'
-);
+    const tokenData = {
+        accessToken: responseBody.accessToken
+    };
 
-fs.mkdirSync(path.dirname(tokenPath), { recursive: true });
+    fs.writeFileSync(
+        'auth/token.json',
+        JSON.stringify(tokenData, null, 2)
+    );
 
-//token is written to the file
-fs.writeFileSync(tokenPath, JSON.stringify({ token }));
-console.log("TOKEN GENERATED:", token);
+    await apiContext.dispose();
 }
 
 export default globalSetup;

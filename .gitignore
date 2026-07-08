@@ -7,3 +7,4 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 /playwright/.env/
+/playwright/resources/utilities/apiTestData/token.json
