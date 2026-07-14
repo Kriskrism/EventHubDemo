@@ -8,14 +8,14 @@ import { EventFactory } from "../../../resources/data/EventFactory";
 import { BookingResponseSchema } from "../../../apiJSONSchema/bookings/createBooking.schema";
 import { DeleteEvent } from "../../../services/events/deleteEvent";
 
-test.describe("Create a new booking ", async () => {
+test.describe("Create a new booking",  () => {
 
     const token = JSON.parse(
         fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
     ).token;
 
     let bookingPayload: any
-    const eventPayLoad = await EventFactory.create();
+    const eventPayLoad =  EventFactory.create();
     let eventID: number;
 
     //create a new event

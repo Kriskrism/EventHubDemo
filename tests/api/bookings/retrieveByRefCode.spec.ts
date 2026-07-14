@@ -7,13 +7,13 @@ import { BookingEventFactory } from "../../../resources/data/BookingFactory";
 import { CreateNewBooking } from "../../../services/bookings/createNewBookings";
 import { DeleteEvent } from "../../../services/events/deleteEvent";
 
-test.describe(async () => {
+test.describe('Retrieve booking by refernce code', () => {
     const token = JSON.parse(
         fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
     ).token;
 
     let bookingPayload: any
-    const eventPayLoad = await EventFactory.create();
+    const eventPayLoad =  EventFactory.create();
     let eventID: number;
     let bookingRef: string
 
@@ -44,7 +44,7 @@ test.describe(async () => {
         const reteiveByRefCodeResponse = await RetreiveByRefCode.getByRefCode(token, invalidBookingRef)
         const reteiveByRefCodeBody = await reteiveByRefCodeResponse.json();
         await expect(reteiveByRefCodeResponse.status()).toBe(404)
-        await expect(reteiveByRefCodeBody.error).toBe(`Booking with reference \"${invalidBookingRef}\" not found`)
+        await expect(reteiveByRefCodeBody.error).toBe(`Booking with reference "${invalidBookingRef}" not found`)
 
     })
 

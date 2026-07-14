@@ -9,7 +9,7 @@ import fs from 'fs'
 import { faker } from "@faker-js/faker";
 import { DeleteEvent } from "../../../services/events/deleteEvent";
 
-test.describe('Get a single booking by ID', async () => {
+test.describe('Get a single booking by ID',  () => {
 
 
     const token = JSON.parse(
@@ -17,7 +17,7 @@ test.describe('Get a single booking by ID', async () => {
     ).token;
 
     let bookingPayload: any
-    const eventPayLoad = await EventFactory.create();
+    const eventPayLoad =  EventFactory.create();
     let eventID: number;
     let bookingID: number;
     let bookingEventBody: any;

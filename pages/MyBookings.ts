@@ -68,14 +68,14 @@ export class Mybookings{
         }
     }
 
-    async verifyConfirmedEvent(eventName : String, ticketCount: string , venue: string){
+    async verifyConfirmedEvent(eventName : string, ticketCount: string , venue: string){
             
-            let todaysDate = await new commonMethods().getTodaysDate();
+            const todaysDate = await new commonMethods().getTodaysDate();
 
             await expect(this.page.getByRole('heading', {name : `${eventName}`})).toBeVisible();
             await expect(this.page.locator(`.ticket-count:has-text("${ticketCount} Tickets")`)).toHaveText(`${ticketCount} Tickets`);
             await expect(this.page.locator(`.venue:has-text("${venue}")`)).toHaveText(venue);
-            let date = await this.bookedDate.textContent();
+            const date = await this.bookedDate.textContent();
             await expect(date).toContain(todaysDate)
             return date;
            

@@ -7,7 +7,7 @@ type ApiFixtures = {
 
 export const test = base.extend<ApiFixtures>({
 
-    apiContext: async ({}, use) => {
+    apiContext: async (_fixtures, use) => {
 
         const tokenData = JSON.parse(
             fs.readFileSync('auth/token.json', 'utf-8')
