@@ -11,13 +11,13 @@ import { ListSingleEvent } from '../../../services/events/listSingleEvent.ts';
 import { DeleteEvent } from "../../../services/events/deleteEvent.ts";
 
 
-test.describe(async () => {
+test.describe( () => {
     const token = JSON.parse(
         fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
     ).token;
 
     let bookingPayload: any
-    const eventPayLoad = await EventFactory.create();
+    const eventPayLoad =  EventFactory.create();
     let eventID: number;
     let bookingId: number;
     let availableSeat: number;
