@@ -219,7 +219,7 @@ export class AdminEventManagementPage {
             try {
                 const tableText = await this.eventsTable.textContent();
                 console.log('Current table contents:', tableText);
-            } catch (e) {
+            } catch  {
                 console.error('Could not retrieve table contents');
             }
             return false;

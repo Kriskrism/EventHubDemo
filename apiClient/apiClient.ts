@@ -1,4 +1,4 @@
-import { request, APIRequestContext } from '@playwright/test';
+import { request } from '@playwright/test';
 //import { config } from '../resources/config/env';
 import dotenv from 'dotenv';
 dotenv.config();

@@ -46,19 +46,19 @@ export class Mybookings{
             await expect(this.bookingStatus).toBeVisible();
             try {
                 await expect(this.page.getByRole('heading', { name: `${eventName}`})).toBeVisible();
-            } catch (e) {
+            } catch  {
                 console.log('Event name element not found - may not have bookings');
             }
             try {
                 await expect(this.page.getByText('🎫 '+`${ticketcount}`+' tickets')).toBeVisible();
                 
-            } catch (e) {
+            } catch  {
                 console.log('Ticket count element not found - may not have bookings');
             }
             try {
                 console.log("Event city is"+ eventCity);
                 await expect(this.page.getByText('📍 '+`${eventCity}`)).toBeVisible();
-            } catch (e) {
+            } catch  {
                 console.log('Venue element not found - may not have bookings');
             }
             console.log('All elements on My Bookings page are visible');

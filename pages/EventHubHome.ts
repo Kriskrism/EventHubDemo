@@ -1,6 +1,6 @@
-import { Locator, LocatorScreenshotOptions, Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test";
 import { expect } from "@playwright/test";
-import testData from '../resources/testData.json'
+
 import { credentials } from '../resources/config/env'
 
 export class EvenHubHome{
@@ -13,7 +13,7 @@ export class EvenHubHome{
     apiDocsLink:Locator
     adminLink : Locator
     browseEventsLink : Locator
-    myBookingsLink : Locator
+  
    
 
     constructor(page : Page){

@@ -1,4 +1,4 @@
-import { Locator,Page, expect } from "@playwright/test";
+import { Page, expect } from "@playwright/test";
 
 export class ViewBookingsScreen{
     readonly page : Page;
@@ -16,7 +16,7 @@ export class ViewBookingsScreen{
             await expect(this.page.locator(`span:has-text('${venue}')`)).toHaveText(venue);
             await expect(this.page.locator(`span:has-text('${city}')`)).toHaveText(city);
         }
-        catch(e){
+        catch{
             console.log('Event name not found in details view');
         }
     }
@@ -27,7 +27,7 @@ export class ViewBookingsScreen{
                 await expect(this.page.locator(`//span[contains(text(), '${email}')]`)).toHaveText(email);
                 expect(this.page.getByText(`${phone}`)).toHaveText(phone);
             }
-            catch(e){
+            catch{
                 console.log('Customer details not found in details view');
             }
         }
@@ -40,7 +40,7 @@ export class ViewBookingsScreen{
                 const totalPaid = parseFloat(tickets) * parseFloat(pricePerTicket.replace(/[^0-9.-]+/g,""));
                 await expect(this.page.locator("//span[contains(text(),'Total Paid')]//following-sibling::span")).toBe(totalPaid);
             }
-            catch(e){
+            catch{
                 console.log('Payment summary not found in details view');
             }
         }
@@ -50,7 +50,7 @@ export class ViewBookingsScreen{
                 await expect( this.page.locator("//span[contains(text(),'Booked on')]//following-sibling::span")).toHaveText(bookingDate);
                 await expect( this.page.locator("//span[contains(text(),'Booking ID')]//following-sibling::span")).toHaveText(bookingId);
             }
-            catch(e){
+            catch{
                 console.log('Booking information not found in details view');
             }
             }
