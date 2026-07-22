@@ -32,7 +32,7 @@ test.describe('My Bookings Page Tests', () => {
         // Navigate to My Bookings page
         await test.step('Navigate to My Bookings', async () => {
             await evenHubHome.myBookingsLink.click();
-            await page.waitForLoadState('networkidle');
+            
         });
     });
 

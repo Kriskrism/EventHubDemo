@@ -5,7 +5,7 @@ import { test, expect } from '../../../fixtures/authFixture.ts';
 import { deleteEventSchema } from "../../../apiJSONSchema/event/deleteEvent.schema.ts";
 import { EventFactory } from "../../../resources/data/EventFactory.ts";
 
-test.describe('Verify the delete operation', async () => {
+test.describe('Verify the delete operation',  () => {
 
     const token = JSON.parse(fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')).token
     let eventID: number;

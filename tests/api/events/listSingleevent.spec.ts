@@ -4,7 +4,7 @@ import { ListEventsService } from '../../../services/events/listEventsService.ts
 import fs from 'fs';
 import { faker } from '@faker-js/faker';
 
-test.describe('Get the single event using id', async () => {
+test.describe('Get the single event using id',  () => {
 
     let token: string;
     let eventId: number;

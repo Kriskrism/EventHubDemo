@@ -6,7 +6,7 @@ import { updateeventSchema } from '../../../apiJSONSchema/event/updateEvent.sche
 import fs from 'fs'
 import { DeleteEvent } from '../../../services/events/deleteEvent.ts';
 
-test.describe("Update events", async () => {
+test.describe("Update events",  () => {
 
     let eventID: number;
 

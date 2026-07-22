@@ -11,7 +11,7 @@ test.describe('Verify Login page elements and functionality', () => {
     })
 
 
-    test('Verify login page elements', async ({ page }) => {
+    test('Verify login page elements @smoke', async ({ page }) => {
         await page.goto(testData.url);
         await signInPage.validateSignInPageTitle();
     })

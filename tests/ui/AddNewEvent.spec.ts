@@ -30,7 +30,7 @@ test.describe('Admin Event Management Tests', () => {
 
             await signInPage.clickSignIn(credentials.username, credentials.password);
             await evenHubHome.verifyLogInSuccess();
-            await page.waitForLoadState('networkidle');
+            
             console.log('Login successful');
         });
 
@@ -67,12 +67,12 @@ test.describe('Admin Event Management Tests', () => {
             console.log(`Visible errors before submission: ${preSubmitErrors}`);
 
             await adminEventManagementPage.submitEventForm();
-            await page.waitForLoadState('networkidle');
+            
 
             // Check for validation errors after submission
             const errorMessages = await page.locator('[class*="error"], [role="alert"]').all();
             if (errorMessages.length > 0) {
-                for (let error of errorMessages) {
+                for (const error of errorMessages) {
                     const text = await error.textContent();
                     console.log(`Form error: ${text}`);
                 }
@@ -81,14 +81,14 @@ test.describe('Admin Event Management Tests', () => {
             await page.waitForTimeout(2000); // Wait for the table to refresh
             // Reload the page to see the latest events
             await page.reload();
-            await page.waitForLoadState('networkidle');
+            
             console.log('Event form submitted and page reloaded');
         });
 
         await test.step('Verify newly created event appears in All Events section', async () => {
             // Scroll down to see the table
             await page.locator('text=/All Events/').scrollIntoViewIfNeeded();
-            await page.waitForTimeout(1000);
+            
             const eventFound = await adminEventManagementPage.verifyEventInTable(eventData.title);
             expect(eventFound).toBe(true);
             console.log(`Event "${eventData.title}" verified in All Events table`);

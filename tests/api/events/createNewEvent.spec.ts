@@ -9,7 +9,7 @@ import fs from 'fs';
 let response;
 let eventID: number;
 
-test.describe("Create new events", async () => {
+test.describe("Create new events",  () => {
 
     //accessing the auth token
     const token = JSON.parse(
