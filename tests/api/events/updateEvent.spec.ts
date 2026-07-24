@@ -1,10 +1,10 @@
-import { test, expect } from '../../../fixtures/authFixture.ts';
-import { UpdateSingleEvent } from '../../../services/events/updateEvent.ts';
+import { test, expect } from '../../../fixtures/authFixture';
+import { UpdateSingleEvent } from '../../../services/events/updateEvent';
 import { EventFactory } from '../../../resources/data/EventFactory';
-import { CreateEvent } from '../../../services/events/createNewEvent.ts';
-import { updateeventSchema } from '../../../apiJSONSchema/event/updateEvent.schema.ts';
-import fs from 'fs'
-import { DeleteEvent } from '../../../services/events/deleteEvent.ts';
+import { CreateEvent } from '../../../services/events/createNewEvent';
+import { updateeventSchema } from '../../../apiJSONSchema/event/updateEvent.schema';
+import { DeleteEvent } from '../../../services/events/deleteEvent';
+import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 
 test.describe("Update events",  () => {
 
@@ -13,9 +13,7 @@ test.describe("Update events",  () => {
     const createEventData = EventFactory.create();
 
     //accessing the auth token
-    const token = JSON.parse(
-        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
-    ).token;
+    const token = getAuthToken();
 
 
     //accessing the payload for update

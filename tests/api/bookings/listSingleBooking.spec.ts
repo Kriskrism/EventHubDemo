@@ -5,16 +5,14 @@ import { EventFactory } from "../../../resources/data/EventFactory";
 import { CreateNewBooking } from "../../../services/bookings/createNewBookings";
 import { ListSingleBooking } from "../../../services/bookings/listSingleBooking";
 import { CreateEvent } from "../../../services/events/createNewEvent";
-import fs from 'fs'
 import { faker } from "@faker-js/faker";
 import { DeleteEvent } from "../../../services/events/deleteEvent";
+import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 
 test.describe('Get a single booking by ID',  () => {
 
 
-    const token = JSON.parse(
-        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
-    ).token;
+    const token = getAuthToken();
 
     let bookingPayload: any
     const eventPayLoad =  EventFactory.create();

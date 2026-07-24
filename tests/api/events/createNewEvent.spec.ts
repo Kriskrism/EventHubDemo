@@ -1,20 +1,16 @@
-
-import { createeventSchema } from '../../../apiJSONSchema/event/createEvent.schema.ts';
-import { test, expect } from '../../../fixtures/authFixture.ts';
-import { EventFactory } from '../../../resources/data/EventFactory.ts';
-import { CreateEvent } from '../../../services/events/createNewEvent.ts';
+import { createeventSchema } from '../../../apiJSONSchema/event/createEvent.schema';
+import { test, expect } from '../../../fixtures/authFixture';
+import { EventFactory } from '../../../resources/data/EventFactory';
+import { CreateEvent } from '../../../services/events/createNewEvent';
 import { DeleteEvent } from "../../../services/events/deleteEvent";
-import fs from 'fs';
-
+import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 let response;
 let eventID: number;
 
 test.describe("Create new events",  () => {
 
     //accessing the auth token
-    const token = JSON.parse(
-        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
-    ).token;
+    const token = getAuthToken();
 
     const payLoad = EventFactory.create();
 
@@ -72,8 +68,3 @@ test.describe("Create new events",  () => {
 
 
 })
-
-
-
-
-

@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import { request } from '@playwright/test';
 
 async function globalSetup() {
@@ -9,21 +10,26 @@ async function globalSetup() {
 
     const response = await apiContext.post('api/auth/login', {
         data: {
-            email: process.env.EMAIL,
-            password: process.env.PASSWORD
+            email: process.env.TEST_USERNAME,
+            password: process.env.TEST_PASSWORD
         }
     });
 
+    if (!response.ok()) {
+        throw new Error(
+            `Global setup login failed with status ${response.status()}. Check EMAIL/PASSWORD/API_BASE_URL in your .env file.`
+        );
+    }
+
     const responseBody = await response.json();
 
+    // Handles either field name the login API might return
     const tokenData = {
-        accessToken: responseBody.accessToken
+        token: responseBody.token ?? responseBody.accessToken
     };
 
-    fs.writeFileSync(
-        'auth/token.json',
-        JSON.stringify(tokenData, null, 2)
-    );
+    const tokenPath = path.resolve(__dirname, 'utilities/apiTestData/token.json');
+    fs.writeFileSync(tokenPath, JSON.stringify(tokenData, null, 2));
 
     await apiContext.dispose();
 }

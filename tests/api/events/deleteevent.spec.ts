@@ -1,13 +1,13 @@
 import { DeleteEvent } from "../../../services/events/deleteEvent";
-import fs from 'fs'
 import { CreateEvent } from "../../../services/events/createNewEvent";
-import { test, expect } from '../../../fixtures/authFixture.ts';
-import { deleteEventSchema } from "../../../apiJSONSchema/event/deleteEvent.schema.ts";
-import { EventFactory } from "../../../resources/data/EventFactory.ts";
+import { test, expect } from '../../../fixtures/authFixture';
+import { deleteEventSchema } from "../../../apiJSONSchema/event/deleteEvent.schema";
+import { EventFactory } from "../../../resources/data/EventFactory";
+import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 
 test.describe('Verify the delete operation',  () => {
 
-    const token = JSON.parse(fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')).token
+    const token = getAuthToken()
     let eventID: number;
     const createEventData = EventFactory.create();
 

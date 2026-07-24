@@ -1,20 +1,18 @@
 import { test, expect } from "../../../fixtures/authFixture";
 import { RetreiveByRefCode } from "../../../services/bookings/retrieveByReferenceCode";
-import fs from 'fs'
 import { CreateEvent } from "../../../services/events/createNewEvent";
 import { EventFactory } from "../../../resources/data/EventFactory";
 import { BookingEventFactory } from "../../../resources/data/BookingFactory";
 import { CreateNewBooking } from "../../../services/bookings/createNewBookings";
 import { DeleteBooking } from "../../../services/bookings/deleteBooking";
 import { ListSingleBooking } from "../../../services/bookings/listSingleBooking";
-import { ListSingleEvent } from '../../../services/events/listSingleEvent.ts';
-import { DeleteEvent } from "../../../services/events/deleteEvent.ts";
+import { ListSingleEvent } from '../../../services/events/listSingleEvent';
+import { DeleteEvent } from "../../../services/events/deleteEvent";
+import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 
 
 test.describe( () => {
-    const token = JSON.parse(
-        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
-    ).token;
+    const token = getAuthToken();
 
     let bookingPayload: any
     const eventPayLoad =  EventFactory.create();

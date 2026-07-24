@@ -1,12 +1,9 @@
-import { test, expect } from '../../../fixtures/authFixture.ts';
-import { ListEventsService } from '../../../services/events/listEventsService.ts';
-import fs from 'fs'; 
-
+import { test, expect } from '../../../fixtures/authFixture';
+import { ListEventsService } from '../../../services/events/listEventsService';
+import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 test('List Events', async () => {
 
-    const token = JSON.parse(
-        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
-    ).token;
+    const token = getAuthToken();
 
     const response = await ListEventsService.listEvents(token);
 
