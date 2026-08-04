@@ -10,7 +10,6 @@ test.describe('Verify Login page elements and functionality', () => {
         signInPage = new SigninPage(page);
     })
 
-
     test('Verify login page elements ',{tag: '@smoke' },async ({ page }) => {
         await page.goto(testData.url);
         await signInPage.validateSignInPageTitle();
