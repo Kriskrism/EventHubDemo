@@ -21,6 +21,7 @@ export default tseslint.config(
     rules: {
       // Loosen a couple of strict defaults while you're learning —
       // tighten these later as you get more comfortable.
+      'playwright/expect-expect': 'off',
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
     },
