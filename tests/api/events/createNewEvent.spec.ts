@@ -14,6 +14,10 @@ test.describe("Create new events",  () => {
 
     const payLoad = EventFactory.create();
 
+     test.afterAll(async () => {
+        await DeleteEvent.deleteEvent(token, eventID);
+    });
+
     test('Create a new event successfully', async () => {
         response = await CreateEvent.createNewEvent(token, payLoad);
         expect(response.status()).toBe(201)
@@ -30,9 +34,7 @@ test.describe("Create new events",  () => {
     })
 
     //deleting the event after the test is completed
-    test.afterAll(async () => {
-        await DeleteEvent.deleteEvent(token, eventID);
-    });
+   
 
     test('Create a new event with validation error', async () => {
 
