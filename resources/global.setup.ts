@@ -29,6 +29,7 @@ async function globalSetup() {
     };
 
     const tokenPath = path.resolve(__dirname, 'utilities/apiTestData/token.json');
+    fs.mkdirSync(path.dirname(tokenPath), { recursive: true });
     fs.writeFileSync(tokenPath, JSON.stringify(tokenData, null, 2));
 
     await apiContext.dispose();
