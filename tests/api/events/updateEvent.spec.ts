@@ -33,11 +33,11 @@ test.describe("Update events",  () => {
 
     test("Update a single event using valid token", async () => {
         const response = await UpdateSingleEvent.updateSingleEvent(token, eventID, eventData)
-        await expect(response.status()).toBe(200)
+         expect(response.status()).toBe(200)
         const updateBody = await response.json()
 
-        await expect(updateBody.data.title).toBe(eventData.title)
-        await expect(updateBody.data.id).toBe(eventID)
+         expect(updateBody.data.title).toBe(eventData.title)
+         expect(updateBody.data.id).toBe(eventID)
 
 
         //validate the schema for valid resposne
@@ -51,10 +51,10 @@ test.describe("Update events",  () => {
             title: "", // override freely in test
         };
         const response = await UpdateSingleEvent.updateSingleEvent(token, eventID, payload)
-        await expect(response.status()).toBe(400)
+         expect(response.status()).toBe(400)
         const updateBody = await response.json()
 
-        await expect(updateBody.error).toBe("Validation failed")
+         expect(updateBody.error).toBe("Validation failed")
 
         //validate the schema for invalid event creation
         updateeventSchema.invalidResponse.parse(updateBody)
@@ -67,8 +67,8 @@ test.describe("Update events",  () => {
         const updateResponse = await UpdateSingleEvent.updateSingleEvent(token, invalidEventId, eventData)
         const body = await updateResponse.json();
 
-        await expect(updateResponse.status()).toBe(404)
-        await expect(body.error).toBe(`Event with id ${invalidEventId} not found`)
+         expect(updateResponse.status()).toBe(404)
+         expect(body.error).toBe(`Event with id ${invalidEventId} not found`)
 
         //validate the schema for invalid event creation
         updateeventSchema.unauthorizedResponse.parse(body)
@@ -79,8 +79,8 @@ test.describe("Update events",  () => {
         const updateResponse = await UpdateSingleEvent.getUpdateEventWithNoAuth(token, eventID, eventData)
         const body = await updateResponse.json();
 
-        await expect(updateResponse.status()).toBe(401)
-        await expect(body.error).toBe('Unauthorized')
+         expect(updateResponse.status()).toBe(401)
+         expect(body.error).toBe('Unauthorized')
 
         //validate the schema for invalid event creation
         updateeventSchema.unauthorizedResponse.parse(body)

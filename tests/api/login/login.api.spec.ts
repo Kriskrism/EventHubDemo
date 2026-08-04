@@ -15,10 +15,10 @@ test('Login API test using valid credentials', async () => {
     const response = await LoginService.login(payLoad);
 
     const body = await response.json();
-    expect(await response.status()).toBe(200);
+    expect( response.status()).toBe(200);
     expect(body).toHaveProperty('token');
 
-    token = body.token;
+    //token = body.token;
 })
 
 test('Login using invalid credentials', async () => {
@@ -33,7 +33,7 @@ test('Login using invalid credentials', async () => {
     const response = await LoginService.login(payLoad);
 
     const body = await response.json();
-    expect(await response.status()).toBe(400);
+    expect( response.status()).toBe(400);
     expect(body.error).toBe('Invalid email or password');
 
 
@@ -49,6 +49,6 @@ test('Login using invalid email', async () => {
 
     const response = await LoginService.login(payLoad);
     const body = await response.json();
-    expect(await response.status()).toBe(400)
+    expect(response.status()).toBe(400)
     expect(await body.error).toBe('Invalid email or password');
 })
