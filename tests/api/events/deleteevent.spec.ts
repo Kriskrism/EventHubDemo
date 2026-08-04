@@ -22,8 +22,8 @@ test.describe('Verify the delete operation',  () => {
         const deleteResponse = await DeleteEvent.deleteEvent(token, eventID);
         const deleteBody = await deleteResponse.json();
 
-        await expect(deleteResponse.status()).toBe(200)
-        await expect(deleteBody.message).toBe("Event deleted successfully")
+         expect(deleteResponse.status()).toBe(200)
+         expect(deleteBody.message).toBe("Event deleted successfully")
 
         //validate the schema
         deleteEventSchema.validResponse.parse(deleteBody)
@@ -37,8 +37,8 @@ test.describe('Verify the delete operation',  () => {
                 const deleteResponse = await DeleteEvent.deleteEvent(token, invalidEventId);
                 const body = await deleteResponse.json();
         
-                await expect(deleteResponse.status()).toBe(404)
-                await expect(body.error).toBe(`Event with id ${invalidEventId} not found`)
+                expect(deleteResponse.status()).toBe(404)
+                expect(body.error).toBe(`Event with id ${invalidEventId} not found`)
         
                 //validate the schema for invalid event creation
                 deleteEventSchema.unauthorizedResponse.parse(body)
@@ -49,8 +49,8 @@ test.describe('Verify the delete operation',  () => {
                const deleteResponse = await DeleteEvent.getDeleteEventWithNoAuth(token, eventID)
                const body = await deleteResponse.json();
        
-               await expect(deleteResponse.status()).toBe(401)
-               await expect(body.error).toBe('Unauthorized')
+               expect(deleteResponse.status()).toBe(401)
+               expect(body.error).toBe('Unauthorized')
        
                //validate the schema for invalid event creation
                deleteEventSchema.unauthorizedResponse.parse(body)

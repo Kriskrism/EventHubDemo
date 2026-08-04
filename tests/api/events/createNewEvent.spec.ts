@@ -58,8 +58,8 @@ test.describe("Create new events",  () => {
         //const invalidtoken  = token +"abcd"
         const response = await CreateEvent.createNewEvent(" ", payLoad)
         const body = await response.json();
-        await expect(response.status()).toBe(401);
-        await expect(body.error).toBe("Unauthorized")
+        expect(response.status()).toBe(401);
+        expect(body.error).toBe("Unauthorized")
 
         //validate the schema
         createeventSchema.unauthorizedResponse.parse(body);

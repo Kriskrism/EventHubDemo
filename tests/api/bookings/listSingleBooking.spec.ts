@@ -8,6 +8,9 @@ import { CreateEvent } from "../../../services/events/createNewEvent";
 import { faker } from "@faker-js/faker";
 import { DeleteEvent } from "../../../services/events/deleteEvent";
 import { getAuthToken } from '../../../resources/utilities/getAuthToken';
+import { z } from "zod";
+import { createeventSchema } from "../../../apiJSONSchema/event/createEvent.schema";
+import { BookingResponseSchema } from "../../../apiJSONSchema/bookings/createBooking.schema";
 
 test.describe('Get a single booking by ID', () => {
 
@@ -18,19 +21,19 @@ test.describe('Get a single booking by ID', () => {
     const eventPayLoad = EventFactory.create();
     let eventID: number;
     let bookingID: number;
-    let bookingEventBody: any;
-    let createBody: any;
+    let bookingEventBody: z.infer<typeof BookingResponseSchema>;;
+    let createBody: z.infer<typeof createeventSchema.validResponse>;;
 
     //create a new event, book the event and get the booking id
     test.beforeAll(async () => {
         const createResponse = await CreateEvent.createNewEvent(token, eventPayLoad)
         createBody = await createResponse.json()
-        eventID = await createBody.data.id;
+        eventID =  createBody.data.id;
 
         bookingPayload = BookingEventFactory.createBooking(eventID);
         const bookingEventResponse = await CreateNewBooking.createNewBooking(token, bookingPayload)
         bookingEventBody = await bookingEventResponse.json();
-        bookingID = await bookingEventBody.data.id;
+        bookingID =  bookingEventBody.data.id;
     })
 
     test.afterAll("Delete the created event", async () => {
