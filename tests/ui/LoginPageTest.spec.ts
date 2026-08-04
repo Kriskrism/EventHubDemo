@@ -1,4 +1,4 @@
-import { test} from '@playwright/test';
+import { test } from '@playwright/test';
 import { SigninPage } from '../../pages/SignInPage';
 import testData from '../../resources/utilities/uiTestData/testData.json'
 import { credentials } from '../../resources/config/env'
@@ -10,7 +10,7 @@ test.describe('Verify Login page elements and functionality', () => {
         signInPage = new SigninPage(page);
     })
 
-    test('Verify login page elements ',{tag: '@smoke' },async ({ page }) => {
+    test('Verify login page elements ', {tag: '@smoke'}, async ({ page }) => {
         await page.goto(testData.url);
         await signInPage.validateSignInPageTitle();
     })
