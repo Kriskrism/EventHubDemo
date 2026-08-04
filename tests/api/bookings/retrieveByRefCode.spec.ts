@@ -11,7 +11,7 @@ test.describe('Retrieve booking by refernce code', () => {
     const token = getAuthToken();
 
     let bookingPayload: ReturnType<typeof BookingEventFactory.createBooking>
-    const eventPayLoad =  EventFactory.create();
+    const eventPayLoad = EventFactory.create();
     let eventID: number;
     let bookingRef: string
 
@@ -37,19 +37,19 @@ test.describe('Retrieve booking by refernce code', () => {
         const reteiveByRefCodeResponse = await RetreiveByRefCode.getByRefCode(token, bookingRef)
 
         const reteiveByRefCodeBody = await reteiveByRefCodeResponse.json();
-        await expect(reteiveByRefCodeBody.data.bookingRef).toBe(bookingRef)
-        await expect(reteiveByRefCodeResponse.status()).toBe(200)
+        expect(reteiveByRefCodeBody.data.bookingRef).toBe(bookingRef)
+        expect(reteiveByRefCodeResponse.status()).toBe(200)
     })
 
     //booking not found
-    test('Verfiy response when booking not found', async()=>{
+    test('Verfiy response when booking not found', async () => {
         const invalidBookingRef = "T-JH$PTW"
         const reteiveByRefCodeResponse = await RetreiveByRefCode.getByRefCode(token, invalidBookingRef)
         const reteiveByRefCodeBody = await reteiveByRefCodeResponse.json();
-        await expect(reteiveByRefCodeResponse.status()).toBe(404)
-        await expect(reteiveByRefCodeBody.error).toBe(`Booking with reference "${invalidBookingRef}" not found`)
+        expect(reteiveByRefCodeResponse.status()).toBe(404)
+        expect(reteiveByRefCodeBody.error).toBe(`Booking with reference "${invalidBookingRef}" not found`)
 
     })
 
-     
+
 })

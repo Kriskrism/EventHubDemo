@@ -9,13 +9,13 @@ import { faker } from "@faker-js/faker";
 import { DeleteEvent } from "../../../services/events/deleteEvent";
 import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 
-test.describe('Get a single booking by ID',  () => {
+test.describe('Get a single booking by ID', () => {
 
 
     const token = getAuthToken();
 
     let bookingPayload: ReturnType<typeof BookingEventFactory.createBooking>;
-    const eventPayLoad =  EventFactory.create();
+    const eventPayLoad = EventFactory.create();
     let eventID: number;
     let bookingID: number;
     let bookingEventBody: any;
@@ -27,10 +27,15 @@ test.describe('Get a single booking by ID',  () => {
         createBody = await createResponse.json()
         eventID = await createBody.data.id;
 
-        bookingPayload = await BookingEventFactory.createBooking(eventID);
+        bookingPayload = BookingEventFactory.createBooking(eventID);
         const bookingEventResponse = await CreateNewBooking.createNewBooking(token, bookingPayload)
         bookingEventBody = await bookingEventResponse.json();
         bookingID = await bookingEventBody.data.id;
+    })
+
+    test.afterAll("Delete the created event", async () => {
+        await DeleteEvent.deleteEvent(token, eventID);
+
     })
 
     test("Get a single booking using valid booking id", async () => {
@@ -38,9 +43,9 @@ test.describe('Get a single booking by ID',  () => {
         const singleBookingIDResponse = await ListSingleBooking.getSingleBookingID(token, bookingID);
         const singleBookingIDBody = await singleBookingIDResponse.json();
 
-        await expect(singleBookingIDResponse.status()).toBe(200)
+        expect(singleBookingIDResponse.status()).toBe(200)
 
-        await expect(singleBookingIDBody.data.id).toEqual(bookingID)
+        expect(singleBookingIDBody.data.id).toEqual(bookingID)
 
 
     })
@@ -51,14 +56,11 @@ test.describe('Get a single booking by ID',  () => {
         const singleBookingIDResponse = await ListSingleBooking.getSingleBookingID(token, invalidBookingid);
         const singleBookingIDBody = await singleBookingIDResponse.json();
 
-        await expect(singleBookingIDResponse.status()).toBe(404)
+        expect(singleBookingIDResponse.status()).toBe(404)
 
-        await expect(singleBookingIDBody.error).toEqual(`Booking with id ${invalidBookingid} not found`)
-
-    })
-
-     test.afterAll("Delete the created event", async () => {
-        await DeleteEvent.deleteEvent(token, eventID);
+        expect(singleBookingIDBody.error).toEqual(`Booking with id ${invalidBookingid} not found`)
 
     })
+
+
 })
