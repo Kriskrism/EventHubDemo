@@ -67,18 +67,10 @@ test.describe('Admin Event Management Tests', () => {
             console.log(`Visible errors before submission: ${preSubmitErrors}`);
 
             await adminEventManagementPage.submitEventForm();
+
             
 
-            // Check for validation errors after submission
-            const errorMessages = await page.locator('[class*="error"], [role="alert"]').all();
-            if (errorMessages.length > 0) {
-                for (const error of errorMessages) {
-                    const text = await error.textContent();
-                    console.log(`Form error: ${text}`);
-                }
-            }
-
-            await page.waitForTimeout(2000); // Wait for the table to refresh
+           // await page.waitForTimeout(2000); // Wait for the table to refresh
             // Reload the page to see the latest events
             await page.reload();
             
