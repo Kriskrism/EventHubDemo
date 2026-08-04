@@ -17,17 +17,13 @@ export class EventsPage {
     }
 
     async navigateToEventsPage() {
-        try {
-            // Navigate to the events link from home page using the nav-events test ID
-            const eventsLink = this.page.getByTestId('nav-events');
-            if (await eventsLink.isVisible()) {
-                await eventsLink.click();
-                await this.page.waitForLoadState('networkidle');
-            } else {
-                throw new Error('Events link not found');
-            }
-        } catch (error) {
-            console.error('Error navigating to events page:', error);
+        // Navigate to the events link from home page using the nav-events test ID
+        const eventsLink = this.page.getByTestId('nav-events');
+        if (await eventsLink.isVisible()) {
+            await eventsLink.click();
+            await this.page.waitForLoadState('networkidle');
+        } else {
+            throw new Error('Events link not found');
         }
     }
 

@@ -1,18 +1,16 @@
 import { test, expect } from "../../../fixtures/authFixture";
 
 import { CreateNewBooking } from "../../../services/bookings/createNewBookings";
-import fs from 'fs'
 import { BookingEventFactory } from "../../../resources/data/BookingFactory";
 import { CreateEvent } from "../../../services/events/createNewEvent";
 import { EventFactory } from "../../../resources/data/EventFactory";
 import { BookingResponseSchema } from "../../../apiJSONSchema/bookings/createBooking.schema";
 import { DeleteEvent } from "../../../services/events/deleteEvent";
+import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 
 test.describe("Create a new booking",  () => {
 
-    const token = JSON.parse(
-        fs.readFileSync('./resources/utilities/apiTestData/token.json', 'utf-8')
-    ).token;
+    const token = getAuthToken();
 
     let bookingPayload: any
     const eventPayLoad =  EventFactory.create();

@@ -48,7 +48,7 @@ test.describe('My Bookings Page Tests', () => {
 
         await myBookings.clickViewDetails();
         await viewBookings.verifyEventDetails(testData.eventName, testData.Eventdate, testData.EventVenue, testData.EventCity);
-        await viewBookings.verifyCustomerDetails(testData.FullName, testData.Email, testData.PhoneNumber);
+        await viewBookings.verifyCustomerDetails(testData.FullName, credentials.username, testData.PhoneNumber);
         await viewBookings.verifyPaymentSummary(testData.NumberOfTickets, testData.PricePerTicket);
         // let bookedDate = await myBookings.verifyConfirmedEvent(testData.eventName, testData.NumberOfTickets, testData.EventVenue);
         // await viewBookings.verifybookingInformation(bookedDate, testData.BookingId);

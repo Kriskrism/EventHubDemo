@@ -73,30 +73,25 @@ export class BookEventPage{
     await expect((await this.pricePerTicket.textContent())?.substring(1)).toBe(pricePerTicket.toString())}
 
 async bookTickets(fullName: string, email: string, phoneNumber: string, ticketCount: number){
-    try {
-        await this.fullName.fill(fullName);
-        await this.email.fill(email);
-        await this.phoneNumber.fill(phoneNumber);
-        console.log(`Ticket number: ${ticketCount}`);
+    await this.fullName.fill(fullName);
+    await this.email.fill(email);
+    await this.phoneNumber.fill(phoneNumber);
+    console.log(`Ticket number: ${ticketCount}`);
 
-        //select the number of tickets
-        if (ticketCount > 1) {
-                for (let i = 1; i < ticketCount; i++) {
-                    await this.ticketsIncreaseBtn.click();
-                    console.log(`Increased ticket count to ${i + 1}`);
-         }
-        } else {
-                console.log(`Selected 1 ticket`);
-                }
-    await expect(this.totalBreakDown).toContainText(`$${ticketCount * parseInt((await this.pricePerTicket.textContent() || '0').replace(/\D/g, ''), 10)}`)   
+    //select the number of tickets
+    if (ticketCount > 1) {
+        for (let i = 1; i < ticketCount; i++) {
+            await this.ticketsIncreaseBtn.click();
+            console.log(`Increased ticket count to ${i + 1}`);
+        }
+    } else {
+        console.log(`Selected 1 ticket`);
+    }
+
+    await expect(this.totalBreakDown).toContainText(`$${ticketCount * parseInt((await this.pricePerTicket.textContent() || '0').replace(/\D/g, ''), 10)}`)
     await expect(this.totalAmount).toContainText(`$${ticketCount * parseInt((await this.pricePerTicket.textContent() || '0').replace(/\D/g, ''), 10)}`)
 
     await this.confirmBookingBtn.click();
-    
-    }catch (error) {
-        console.error('Error booking tickets:', error);
-    }
-        
 }
 
 async verifyBookingConfirmed(customerName : string, ticketCount : number){

@@ -25,14 +25,9 @@ async validateSignInPageTitle(){
 }
 
 async clickSignIn(email: string, password: string){
-    try{
-        await this.email.fill(email);
-        await this.password.fill(password);
-        await this.signInButton.click();
-    }catch(error){ 
-        
-        console.error('Error during sign-in:', error);
-     }
+    await this.email.fill(email);
+    await this.password.fill(password);
+    await this.signInButton.click();
 }
 
 async validateInvalidLogin(){

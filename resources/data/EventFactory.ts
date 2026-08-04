@@ -16,7 +16,7 @@ export class EventFactory {
                 fractionDigits:2
             }),
             totalSeats: faker.number.int({
-                min:1,
+                min:10,
                 max:999
             }),
             imageUrl: "https://example.com/banner.jpg"

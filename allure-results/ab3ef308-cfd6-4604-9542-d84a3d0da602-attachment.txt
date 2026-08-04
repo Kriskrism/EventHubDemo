@@ -1,4 +1,0 @@
-Body {
-  success: false,
-  error: 'Route POST /api/bookings/ref/U-7QZKA2 not found'
-}

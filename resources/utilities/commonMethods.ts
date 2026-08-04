@@ -1,7 +1,7 @@
 export class commonMethods {
 
 //returns today's date in the format "10 Apr 2026"
-    async getTodaysDate(){
+    async getTodaysDate(): Promise<string> {
         const today = new Date();
 
         const formattedDate = today.toLocaleDateString('en-GB', {
@@ -10,6 +10,6 @@ export class commonMethods {
         year: 'numeric',
         });
 
-        console.log(formattedDate); // 10 Apr 2026
-            }
+        return formattedDate; // 10 Apr 2026
+    }
 }

@@ -1,4 +1,0 @@
-API_BASE_URL: https://api.eventhub.rahulshettyacademy.com/api
-baseURL: https://api.eventhub.rahulshettyacademy.com/api
-Response url : https://api.eventhub.rahulshettyacademy.com/api/auth/login
-{"success":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE3OTUsImVtYWlsIjoiS3J0ZXN0RXZlbnRodWJAZ21haWwuY29tIiwiaWF0IjoxNzgxODQ0NzgxLCJleHAiOjE3ODI0NDk1ODF9.Unt46IlYb7IxIm2kUHGzLmLSLWTAhRGxhyInmerYVmI","user":{"id":1795,"email":"KrtestEventhub@gmail.com"}}

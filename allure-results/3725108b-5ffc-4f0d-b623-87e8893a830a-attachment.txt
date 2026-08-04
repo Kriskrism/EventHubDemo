@@ -1,7 +1,0 @@
-payload {
-  eventId: 272,
-  customerName: 'Marvin Bartoletti',
-  customerEmail: 'Jeanne36@gmail.com',
-  customerPhone: '298.345.2503 x780',
-  quantity: 9
-}

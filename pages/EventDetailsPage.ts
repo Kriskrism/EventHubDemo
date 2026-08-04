@@ -36,12 +36,8 @@ export class EventDetailsPage {
     }
 
     async clickBookNow() {
-        try {
-            await this.bookNowButton.click();
-            await this.page.waitForLoadState('networkidle');
-        } catch (error) {
-            console.error('Error clicking Book Now button:', error);
-        }
+        await this.bookNowButton.click();
+        await this.page.waitForLoadState('networkidle');
     }
 
     async verifyBookingSuccess() {
@@ -49,12 +45,8 @@ export class EventDetailsPage {
     }
 
     async goBackToEvents() {
-        try {
-            await this.backButton.click();
-            await this.page.waitForLoadState('networkidle');
-        } catch (error) {
-            console.error('Error navigating back:', error);
-        }
+        await this.backButton.click();
+        await this.page.waitForLoadState('networkidle');
     }
 
     async assertSeatsReduced(initialSeats: number, finalSeats: number) {

@@ -1,4 +1,4 @@
-import { Page, Locator } from "@playwright/test";
+import { Page, Locator,expect } from "@playwright/test";
 
 export class RegisterPage{
     readonly page:Page
@@ -22,19 +22,17 @@ export class RegisterPage{
     }
 
     async registerAccount(email : string, password : string){
-        try{
+        
             await this.email.fill(email);
             await this.password.fill(password);
             await this.confirmPassword.fill(password);
             await this.createAccountBtn.click();
-        }catch(error){
-            console.error('Error during account registration:', error);
-        }
+        
     }
 
     async verifyRegisterPageElements(){
-        await this.titleRegister.isVisible();
-        await this.pwdGuidlelines.isVisible();
+        await expect(this.titleRegister).toBeVisible();
+        await expect(this.pwdGuidlelines).toBeVisible();
     }
 
 }
