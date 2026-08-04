@@ -28,6 +28,11 @@ test.describe('Retrieve booking by refernce code', () => {
 
     })
 
+    test.afterAll("Delete the created event", async () => {
+        await DeleteEvent.deleteEvent(token, eventID);
+
+    })
+
     test('Verify retreiving a booking by reference code', async () => {
         const reteiveByRefCodeResponse = await RetreiveByRefCode.getByRefCode(token, bookingRef)
 
@@ -46,8 +51,5 @@ test.describe('Retrieve booking by refernce code', () => {
 
     })
 
-     test.afterAll("Delete the created event", async () => {
-        await DeleteEvent.deleteEvent(token, eventID);
-
-    })
+     
 })

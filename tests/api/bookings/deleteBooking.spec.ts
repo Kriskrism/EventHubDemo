@@ -1,11 +1,9 @@
 import { test, expect } from "../../../fixtures/authFixture";
-import { RetreiveByRefCode } from "../../../services/bookings/retrieveByReferenceCode";
 import { CreateEvent } from "../../../services/events/createNewEvent";
 import { EventFactory } from "../../../resources/data/EventFactory";
 import { BookingEventFactory } from "../../../resources/data/BookingFactory";
 import { CreateNewBooking } from "../../../services/bookings/createNewBookings";
 import { DeleteBooking } from "../../../services/bookings/deleteBooking";
-import { ListSingleBooking } from "../../../services/bookings/listSingleBooking";
 import { ListSingleEvent } from '../../../services/events/listSingleEvent';
 import { DeleteEvent } from "../../../services/events/deleteEvent";
 import { getAuthToken } from '../../../resources/utilities/getAuthToken';
@@ -14,7 +12,7 @@ import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 test.describe( () => {
     const token = getAuthToken();
 
-    let bookingPayload: any
+    let bookingPayload: ReturnType<typeof BookingEventFactory.createBooking>;
     const eventPayLoad =  EventFactory.create();
     let eventID: number;
     let bookingId: number;
@@ -45,13 +43,18 @@ test.describe( () => {
 
     })
 
+    test.afterAll("Delete the created event", async () => {
+        await DeleteEvent.deleteEvent(token, eventID);
+
+    })
+
     //delete booking with valid booking id
     test('Delete a booking with valid id', async () => {
         const deleteBookingResponse = await DeleteBooking.deleteBooking(token, bookingId);
         const deleteBookingBody = await deleteBookingResponse.json();
 
-        await expect(deleteBookingResponse.status()).toBe(200)
-        await expect(deleteBookingBody.message).toBe("Booking cancelled")
+       expect(deleteBookingResponse.status()).toBe(200)
+       expect(deleteBookingBody.message).toBe("Booking cancelled")
 
 
         //calling list event again after deleting a booking
@@ -60,15 +63,12 @@ test.describe( () => {
         const availableSeatAfterDelete = await listeventBody.data.availableSeats;
 
         //verify the released ticket is restored back to availableSeats count 
-        await expect(availableSeat + noOfTickets).toBe(availableSeatAfterDelete)
+         expect(availableSeat + noOfTickets).toBe(availableSeatAfterDelete)
 
 
     })
 
-    test.afterAll("Delete the created event", async () => {
-        await DeleteEvent.deleteEvent(token, eventID);
-
-    })
+    
 
 
 })

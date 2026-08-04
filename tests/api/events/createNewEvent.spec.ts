@@ -29,6 +29,11 @@ test.describe("Create new events",  () => {
 
     })
 
+    //deleting the event after the test is completed
+    test.afterAll(async () => {
+        await DeleteEvent.deleteEvent(token, eventID);
+    });
+
     test('Create a new event with validation error', async () => {
 
         const invalidPayload = {
@@ -60,10 +65,7 @@ test.describe("Create new events",  () => {
         createeventSchema.unauthorizedResponse.parse(body);
     })
 
-    //deleting the event after the test is completed
-    test.afterAll(async () => {
-        await DeleteEvent.deleteEvent(token, eventID);
-    });
+    
 
 
 

@@ -26,6 +26,11 @@ test.describe("Update events",  () => {
         eventID = await createBody.data.id;
     })
 
+    //deleting the event after the test is completed
+    test.afterAll(async () => {
+        await DeleteEvent.deleteEvent(token, eventID);
+    });
+
     test("Update a single event using valid token", async () => {
         const response = await UpdateSingleEvent.updateSingleEvent(token, eventID, eventData)
         await expect(response.status()).toBe(200)
@@ -81,10 +86,7 @@ test.describe("Update events",  () => {
         updateeventSchema.unauthorizedResponse.parse(body)
     })
 
-    //deleting the event after the test is completed
-    test.afterAll(async () => {
-        await DeleteEvent.deleteEvent(token, eventID);
-    });
+    
 
 
 })

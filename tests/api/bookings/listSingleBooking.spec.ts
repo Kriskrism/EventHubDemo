@@ -1,4 +1,4 @@
-import { any } from "zod";
+
 import { test, expect } from "../../../fixtures/authFixture";
 import { BookingEventFactory } from "../../../resources/data/BookingFactory";
 import { EventFactory } from "../../../resources/data/EventFactory";
@@ -14,7 +14,7 @@ test.describe('Get a single booking by ID',  () => {
 
     const token = getAuthToken();
 
-    let bookingPayload: any
+    let bookingPayload: ReturnType<typeof BookingEventFactory.createBooking>;
     const eventPayLoad =  EventFactory.create();
     let eventID: number;
     let bookingID: number;

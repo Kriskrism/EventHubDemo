@@ -23,6 +23,11 @@ test.describe("Create a new booking",  () => {
         eventID = await createBody.data.id;
     })
 
+    test.afterAll("Delete the created event", async () => {
+        await DeleteEvent.deleteEvent(token, eventID);
+
+    })
+
     test('Create a new booking using valid credentials', async () => {
 
         bookingPayload =  BookingEventFactory.createBooking(eventID);
@@ -38,8 +43,5 @@ test.describe("Create a new booking",  () => {
 
     })
 
-     test.afterAll("Delete the created event", async () => {
-        await DeleteEvent.deleteEvent(token, eventID);
-
-    })
+     
 })
