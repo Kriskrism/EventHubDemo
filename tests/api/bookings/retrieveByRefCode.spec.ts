@@ -10,7 +10,7 @@ import { getAuthToken } from '../../../resources/utilities/getAuthToken';
 test.describe('Retrieve booking by refernce code', () => {
     const token = getAuthToken();
 
-    let bookingPayload: any
+    let bookingPayload: ReturnType<typeof BookingEventFactory.createBooking>
     const eventPayLoad =  EventFactory.create();
     let eventID: number;
     let bookingRef: string

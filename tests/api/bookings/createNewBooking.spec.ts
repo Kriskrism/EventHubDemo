@@ -12,7 +12,7 @@ test.describe("Create a new booking",  () => {
 
     const token = getAuthToken();
 
-    let bookingPayload: any
+    let bookingPayload: ReturnType<typeof BookingEventFactory.createBooking>;
     const eventPayLoad =  EventFactory.create();
     let eventID: number;
 
@@ -25,15 +25,15 @@ test.describe("Create a new booking",  () => {
 
     test('Create a new booking using valid credentials', async () => {
 
-        bookingPayload = await BookingEventFactory.createBooking(eventID);
+        bookingPayload =  BookingEventFactory.createBooking(eventID);
         const bookingEventResponse = await CreateNewBooking.createNewBooking(token, bookingPayload)
         const bookingEventBody = await bookingEventResponse.json();
         
-        await expect(bookingEventResponse.status()).toBe(201);
-        await expect(bookingEventBody.message).toBe("Booking confirmed!")
+         expect(bookingEventResponse.status()).toBe(201);
+         expect(bookingEventBody.message).toBe("Booking confirmed!")
 
         //validate the schema
-        await BookingResponseSchema.parse(bookingEventBody)
+         BookingResponseSchema.parse(bookingEventBody)
 
 
     })
