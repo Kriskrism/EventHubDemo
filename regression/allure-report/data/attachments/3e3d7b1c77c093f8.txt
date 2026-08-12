@@ -1,0 +1,50 @@
+Error getting seats for event Dilli Diwali Mela: locator.textContent: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('article, [role="article"]').filter({ hasText: 'Dilli Diwali Mela' }).first().getByText(/\d+\s+seats\s+lefts/i)
+
+    at EventsPage.getAvailableSeatsForEvent (/home/runner/work/EventHubDemo/EventHubDemo/pages/EventsPage.ts:37:50)
+    at /home/runner/work/EventHubDemo/EventHubDemo/tests/ui/EventBookingTest.spec.ts:42:56 {
+  Symbol(step): {
+    location: {
+      file: '/home/runner/work/EventHubDemo/EventHubDemo/pages/EventsPage.ts',
+      line: 37,
+      column: 50,
+      function: 'EventsPage.getAvailableSeatsForEvent'
+    },
+    category: 'pw:api',
+    title: `Get text content locator('article, [role="article"]').filter({ hasText: 'Dilli Diwali Mela' }).first().getByText(/\\d+\\s+seats\\s+lefts/i)`,
+    apiName: 'locator.textContent',
+    params: {
+      selector: 'article, [role="article"] >> internal:has-text="Dilli Diwali Mela"i >> nth=0 >> internal:text=/\\d+\\s+seats\\s+lefts/i',
+      strict: true,
+      timeout: 0
+    },
+    group: 'getter',
+    stepId: 'pw:api@47',
+    boxedStack: undefined,
+    steps: [],
+    attachmentIndices: [],
+    info: TestStepInfoImpl {
+      annotations: [],
+      _testInfo: [TestInfoImpl],
+      _stepId: 'pw:api@47',
+      _title: `Get text content locator('article, [role="article"]').filter({ hasText: 'Dilli Diwali Mela' }).first().getByText(/\\d+\\s+seats\\s+lefts/i)`,
+      _parentStep: undefined,
+      skip: [Function (anonymous)]
+    },
+    complete: [Function: complete],
+    endWallTime: 1786507597714,
+    error: {
+      message: 'Error: locator.textContent: Test timeout of 30000ms exceeded.\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('article, [role="article"]').filter({ hasText: 'Dilli Diwali Mela' }).first().getByText(/\\d+\\s+seats\\s+lefts/i)\x1B[22m\n`,
+      stack: 'Error: locator.textContent: Test timeout of 30000ms exceeded.\n' +
+        'Call log:\n' +
+        `\x1B[2m  - waiting for locator('article, [role="article"]').filter({ hasText: 'Dilli Diwali Mela' }).first().getByText(/\\d+\\s+seats\\s+lefts/i)\x1B[22m\n` +
+        '\n' +
+        '    at EventsPage.getAvailableSeatsForEvent (/home/runner/work/EventHubDemo/EventHubDemo/pages/EventsPage.ts:37:50)\n' +
+        '    at /home/runner/work/EventHubDemo/EventHubDemo/tests/ui/EventBookingTest.spec.ts:42:56',
+      cause: undefined
+    }
+  }
+}
