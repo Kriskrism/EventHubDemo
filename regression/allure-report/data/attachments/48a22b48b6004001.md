@@ -1,0 +1,243 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "EventHub" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7]
+        - generic [ref=e9]: EventHub
+      - generic [ref=e10]:
+        - link "Home" [ref=e11] [cursor=pointer]:
+          - /url: /
+        - link "Events" [active] [ref=e12] [cursor=pointer]:
+          - /url: /events
+        - link "My Bookings" [ref=e13] [cursor=pointer]:
+          - /url: /bookings
+        - link "API Docs" [ref=e14] [cursor=pointer]:
+          - /url: https://api.eventhub.rahulshettyacademy.com/api/docs
+        - button "Admin" [ref=e16] [cursor=pointer]:
+          - text: Admin
+          - img [ref=e17]
+        - generic [ref=e19]:
+          - generic "KrtestEventhub@gmail.com" [ref=e20]
+          - button "Logout" [ref=e21] [cursor=pointer]
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - heading "Upcoming Events" [level=1] [ref=e25]
+        - paragraph [ref=e26]: Find your next unforgettable experience
+      - generic [ref=e28]:
+        - textbox "Search events, venues…" [ref=e30]
+        - combobox [ref=e32] [cursor=pointer]:
+          - option "All Categories" [selected]
+          - option "🎙 Conference"
+          - option "🎵 Concert"
+          - option "⚽ Sports"
+          - option "🛠 Workshop"
+          - option "🎉 Festival"
+        - combobox [ref=e34] [cursor=pointer]:
+          - option "All Cities" [selected]
+          - option "Mumbai"
+          - option "Bangalore"
+          - option "Delhi"
+          - option "Hyderabad"
+          - option "Chennai"
+          - option "Pune"
+      - generic [ref=e35]:
+        - img [ref=e36]
+        - generic [ref=e38]:
+          - text: Your sandbox holds up to
+          - strong [ref=e39]: 9 bookings
+          - text: and you can create up to
+          - strong [ref=e40]: 6 custom events
+          - text: . When either limit is reached, the oldest entry is automatically replaced.
+      - generic [ref=e41]:
+        - article [ref=e42]:
+          - generic [ref=e43]:
+            - img "Dilli Diwali Mela" [ref=e44]
+            - generic [ref=e46]: Festival
+            - generic [ref=e47]: Featured
+          - generic [ref=e48]:
+            - link "Dilli Diwali Mela" [ref=e49] [cursor=pointer]:
+              - /url: /events/3
+              - heading "Dilli Diwali Mela" [level=3] [ref=e50]
+            - generic [ref=e51]:
+              - generic [ref=e52]:
+                - img [ref=e53]
+                - generic [ref=e55]: Tue, 20 Oct
+              - generic [ref=e56]:
+                - img [ref=e57]
+                - generic [ref=e59]: Pragati Maidan Exhibition Grounds, Delhi
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - paragraph [ref=e62]: $300
+                - generic [ref=e63]: 2 seats left!
+              - link "Book Now" [ref=e64] [cursor=pointer]:
+                - /url: /events/3
+        - article [ref=e65]:
+          - generic [ref=e66]:
+            - img "Hollywood Monsoon Night — Los Angeles" [ref=e67]
+            - generic [ref=e69]: Concert
+            - generic [ref=e70]: Featured
+          - generic [ref=e71]:
+            - link "Hollywood Monsoon Night — Los Angeles" [ref=e72] [cursor=pointer]:
+              - /url: /events/2
+              - heading "Hollywood Monsoon Night — Los Angeles" [level=3] [ref=e73]
+            - generic [ref=e74]:
+              - generic [ref=e75]:
+                - img [ref=e76]
+                - generic [ref=e78]: Sat, 11 Jul
+              - generic [ref=e79]:
+                - img [ref=e80]
+                - generic [ref=e82]: Dome, NSCI SVP Stadium, Worli, Los Angeles
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - paragraph [ref=e85]: $2,500
+                - generic [ref=e86]: 8 seats left!
+              - link "Book Now" [ref=e87] [cursor=pointer]:
+                - /url: /events/2
+        - article [ref=e88]:
+          - generic [ref=e89]:
+            - img "World Tech Summit" [ref=e90]
+            - generic [ref=e92]: Conference
+            - generic [ref=e93]: Featured
+          - generic [ref=e94]:
+            - link "World Tech Summit" [ref=e95] [cursor=pointer]:
+              - /url: /events/1
+              - heading "World Tech Summit" [level=3] [ref=e96]
+            - generic [ref=e97]:
+              - generic [ref=e98]:
+                - img [ref=e99]
+                - generic [ref=e101]: Sat, 18 Apr
+              - generic [ref=e102]:
+                - img [ref=e103]
+                - generic [ref=e105]: Hyderabad, Hitech city, Hyderabad
+            - generic [ref=e106]:
+              - generic [ref=e107]:
+                - paragraph [ref=e108]: $1,500
+                - generic [ref=e109]: 8 seats left!
+              - link "Book Now" [ref=e110] [cursor=pointer]:
+                - /url: /events/1
+        - article [ref=e111]:
+          - generic [ref=e112]:
+            - img "Tech Innovation Summit 2026" [ref=e113]
+            - generic [ref=e115]: Conference
+          - generic [ref=e116]:
+            - link "Tech Innovation Summit 2026" [ref=e117] [cursor=pointer]:
+              - /url: /events/88563
+              - heading "Tech Innovation Summit 2026" [level=3] [ref=e118]
+            - generic [ref=e119]:
+              - generic [ref=e120]:
+                - img [ref=e121]
+                - generic [ref=e123]: Thu, 10 Jun
+              - generic [ref=e124]:
+                - img [ref=e125]
+                - generic [ref=e127]: Bengaluru Convention Center, Outer Ring Road, Bangalore
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - paragraph [ref=e130]: $1,500
+                - generic [ref=e131]: 500 seats available
+              - link "Book Now" [ref=e132] [cursor=pointer]:
+                - /url: /events/88563
+        - article [ref=e133]:
+          - generic [ref=e134]:
+            - img "Reverse-engineered analyzing process improvement" [ref=e135]
+            - generic [ref=e137]: Conference
+          - generic [ref=e138]:
+            - link "Reverse-engineered analyzing process improvement" [ref=e139] [cursor=pointer]:
+              - /url: /events/88561
+              - heading "Reverse-engineered analyzing process improvement" [level=3] [ref=e140]
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - img [ref=e143]
+                - generic [ref=e145]: Thu, 8 Jul
+              - generic [ref=e146]:
+                - img [ref=e147]
+                - generic [ref=e149]: Bangalore International Centre, McLaughlinborough
+            - generic [ref=e150]:
+              - generic [ref=e151]:
+                - paragraph [ref=e152]: $1,739
+                - generic [ref=e153]: 865 seats available
+              - link "Book Now" [ref=e154] [cursor=pointer]:
+                - /url: /events/88561
+        - article [ref=e155]:
+          - generic [ref=e156]:
+            - img "Decentralized holistic local area network" [ref=e157]
+            - generic [ref=e159]: Conference
+          - generic [ref=e160]:
+            - link "Decentralized holistic local area network" [ref=e161] [cursor=pointer]:
+              - /url: /events/88557
+              - heading "Decentralized holistic local area network" [level=3] [ref=e162]
+            - generic [ref=e163]:
+              - generic [ref=e164]:
+                - img [ref=e165]
+                - generic [ref=e167]: Fri, 25 Dec
+              - generic [ref=e168]:
+                - img [ref=e169]
+                - generic [ref=e171]: Bangalore International Centre, Caliview
+            - generic [ref=e172]:
+              - generic [ref=e173]:
+                - paragraph [ref=e174]: $852
+                - generic [ref=e175]: 558 seats available
+              - link "Book Now" [ref=e176] [cursor=pointer]:
+                - /url: /events/88557
+      - link "Add New Event" [ref=e178] [cursor=pointer]:
+        - /url: /admin/events
+        - button "Add New Event" [ref=e179]:
+          - img [ref=e180]
+          - text: Add New Event
+  - contentinfo [ref=e182]:
+    - generic [ref=e183]:
+      - generic [ref=e184]:
+        - generic [ref=e185]:
+          - heading "Rahul Shetty Academy" [level=3] [ref=e186]
+          - paragraph [ref=e187]: India's leading QA automation training academy — empowering engineers to build real-world testing skills.
+        - generic [ref=e188]:
+          - heading "Popular Courses" [level=3] [ref=e189]
+          - list [ref=e190]:
+            - listitem [ref=e191]:
+              - link "Selenium WebDriver with Java" [ref=e192] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+            - listitem [ref=e193]:
+              - link "Playwright with JavaScript" [ref=e194] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+            - listitem [ref=e195]:
+              - link "RestAssured API Testing" [ref=e196] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+            - listitem [ref=e197]:
+              - link "Cypress End-to-End Testing" [ref=e198] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+            - listitem [ref=e199]:
+              - link "Appium Mobile Testing" [ref=e200] [cursor=pointer]:
+                - /url: https://rahulshettyacademy.com
+        - generic [ref=e201]:
+          - heading "QA Job Hiring Platform" [level=3] [ref=e202]
+          - paragraph [ref=e203]: Get hired faster — take skill assessments trusted by top QA employers worldwide.
+          - link "techsmarthire.com →" [ref=e204] [cursor=pointer]:
+            - /url: https://techsmarthire.com
+        - generic [ref=e205]:
+          - heading "EventHub Practice App" [level=3] [ref=e206]
+          - list [ref=e207]:
+            - listitem [ref=e208]:
+              - link "Browse Events" [ref=e209] [cursor=pointer]:
+                - /url: /events
+            - listitem [ref=e210]:
+              - link "My Bookings" [ref=e211] [cursor=pointer]:
+                - /url: /bookings
+            - listitem [ref=e212]:
+              - link "Manage Events" [ref=e213] [cursor=pointer]:
+                - /url: /admin/events
+            - listitem [ref=e214]:
+              - link "API Documentation" [ref=e215] [cursor=pointer]:
+                - /url: https://api.eventhub.rahulshettyacademy.com/api/docs
+      - generic [ref=e216]:
+        - paragraph [ref=e217]: © 2026 Rahul Shetty Academy. All rights reserved.
+        - generic [ref=e218]:
+          - link "rahulshettyacademy.com →" [ref=e219] [cursor=pointer]:
+            - /url: https://rahulshettyacademy.com
+          - link "techsmarthire.com →" [ref=e220] [cursor=pointer]:
+            - /url: https://techsmarthire.com
+  - alert [ref=e221]
+```
