@@ -1,0 +1,23 @@
+Logged inuserKrtestEventhub@gmail.com
+Login successful
+Event management page loaded successfully
+Successfully navigated to Manage Events page
+Current event count: 6
+Title entered: Tech Innovation Summit 2026
+Description entered: Discover cutting-edge technologies and network with industry leaders in a day-long summit featuring keynote speeches, panel discussions, and interactive workshops.
+Category selected: Conference
+City entered: Bangalore
+Venue entered: Bengaluru Convention Center, Outer Ring Road
+Event Date & Time entered: 2027-06-10T11:31
+Price entered: 1500
+Total Seats entered: 500
+Image URL entered: https://example.com/tech-summit-image.jpg
+Event form filled successfully
+Visible errors before submission: 1
+Event form submitted successfully
+Event form submitted and page reloaded
+Event "Tech Innovation Summit 2026" found in All Events table
+Event "Tech Innovation Summit 2026" verified in All Events table
+Event details verified for "Tech Innovation Summit 2026"
+Event details verified successfully
+Final event count: 6
